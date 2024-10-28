@@ -1,3 +1,15 @@
+def view_tasks():
+    pass
+
+def complete_task(task_number):
+    pass
+
+def delete_task(task_number):
+    pass
+
+def add_task(task_name):
+    pass
+
 def show_menu():
     print("작업 관리 애플리케이션")
     print("1. 할 일 추가")
@@ -13,15 +25,19 @@ def main():
         choice = input("원하는 작업을 선택하세요 (1~5): ")
 
         if choice == '1':
-            
+            task_name = input("추가할 작업을 입력하세요") #수업 끝나고 맛잇는거 먹을래요
+            add_task(task_name) #함수를 호출 또는 실행한다고 함 -> 함수이름(매개변수)
         elif choice == '2':
-
+            view_tasks()
         elif choice == '3':    
-
-        elif choice == '4':    
-
+            task_number = int(input("완료할 작업 번호를 입력하세요: "))
+            complete_task(task_number)
+        elif choice == '4':  
+            task_number = int(input("삭제할 작업 번호를 입력하세요: "))
+            delete_task(task_number)
         elif choice == '5':
-
+            print("프로그램 종료합니다.")
+            break
         else:
             print("잘못된 입력입니다. 1번부터 5번까지 기능 중 하나를 선택해주세요")    
 
