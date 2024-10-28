@@ -2,5 +2,9 @@
     {
         "name": "맛잇는거",
         "completed": false
+    },
+    {
+        "name": "맛난거",
+        "completed": false
     }
 ]
