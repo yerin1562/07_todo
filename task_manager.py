@@ -1,3 +1,18 @@
+import json
+import os
+
+TASK_FILE = '07_todo/tasks.json'
+
+def load_tasks():
+    if os.path.exists(TASK_FILE):
+        with open(TASK_FILE, 'r', encoding = 'utf-8') as file:
+            return json.load(file)
+    return []
+        
+def save_tasks(tasks):
+    with open(TASK_FILE, 'w', encoding='utf-8') as file:
+        json.dump(tasks, file, indent=4, ensure_ascii = False)
+
 def view_tasks():
     pass
 
@@ -8,7 +23,11 @@ def delete_task(task_number):
     pass
 
 def add_task(task_name):
-    pass
+    tasks = load_tasks()  # => tasks = json.load(file)
+    task = {'name': task_name, 'completed': False }
+    tasks.append(task)
+    save_tasks(tasks)
+    print(f"{task_name} 작업이 추가 되었습니다.")
 
 def show_menu():
     print("작업 관리 애플리케이션")
